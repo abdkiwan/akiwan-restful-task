@@ -1,0 +1,50 @@
+
+Project: RESTful service.
+Author: Abdullah Kiwan.
+Purpose: job application at intraFind (Software developer NLP).
+
+Tools:
+	Spring Boot 1.5.9
+	Elasticsearch 6.4.0
+	Maven 3.6.0
+	Java 8
+
+Steps:
+	1- Set the configurations of elasticsearch in file ./$ES_DIR/config/elasticsearch.yml:
+		cluster.name: elasticsearch
+		network.host: localhost
+
+	2- Run elasticsearch: 
+		./$ES_DIR/bin/elasticsearch
+
+	3- Build java app:
+		mvn package
+
+	4- Run spring boot service:
+		mvn spring-boot:run
+
+	5- Test the service by running the bash file: 
+		./run.sh
+
+Urls used in the service:
+	1- Add a new user: 
+		method: POST
+		url: http://localhost:8080/users/add
+
+	2- Update a user by ID:
+		method: PUT
+		url: http://localhost:8080/users/update/{id}
+
+	3- Delete a user by ID:
+		method: DELETE
+		url: http://localhost:8080/users/delete/{id}
+
+	4- View user information by ID:
+		method: GET
+		url: http://localhost:8080/users/view/{id}
+
+	5- View all users:
+		method: GET
+		url: http://localhost:8080/users/view/all
+
+
